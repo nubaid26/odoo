@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Required — TrustFlow</title>
+</head>
+<body style="margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#f4f6f8;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; overflow:hidden; margin-top:20px;">
+        <!-- Header -->
+        <tr>
+            <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding:30px 40px; text-align:center;">
+                <h1 style="color:#ffffff; margin:0; font-size:24px; font-weight:600;">TrustFlow</h1>
+                <p style="color:#e0d4f7; margin:8px 0 0; font-size:14px;">Expense Approval Required</p>
+            </td>
+        </tr>
+        <!-- Body -->
+        <tr>
+            <td style="padding:40px;">
+                <p style="color:#333; font-size:16px; line-height:1.6; margin:0 0 20px;">
+                    Hi <strong>{{ recipient_name }}</strong>,
+                </p>
+                <p style="color:#555; font-size:14px; line-height:1.6; margin:0 0 20px;">
+                    A new expense requires your approval:
+                </p>
+                <!-- Expense Details Box -->
+                <table width="100%" cellspacing="0" cellpadding="0" style="background:#f8f9fa; border-radius:8px; border:1px solid #e9ecef; margin:0 0 24px;">
+                    <tr>
+                        <td style="padding:20px;">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px; width:120px;">Expense ID</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px; font-family:monospace;">{{ expense_id[:8] }}…</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Submitted By</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ submitter_name }} ({{ submitter_email }})</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Amount</td>
+                                    <td style="padding:6px 0; color:#333; font-size:16px; font-weight:600;">₹{{ amount }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Category</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ category }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Vendor</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ vendor_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Submitted</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ created_at }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                {% if description %}
+                <p style="color:#555; font-size:14px; line-height:1.6; margin:0 0 24px;">
+                    <strong>Description:</strong> {{ description }}
+                </p>
+                {% endif %}
+                <p style="color:#555; font-size:14px; line-height:1.6; margin:0 0 8px;">
+                    Please log in to TrustFlow to review and take action on this expense.
+                </p>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+            <td style="padding:20px 40px; background:#f8f9fa; border-top:1px solid #e9ecef; text-align:center;">
+                <p style="color:#999; font-size:12px; margin:0;">
+                    This is an automated message from TrustFlow. Please do not reply directly to this email.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

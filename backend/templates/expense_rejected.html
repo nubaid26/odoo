@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Rejected — TrustFlow</title>
+</head>
+<body style="margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#f4f6f8;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; overflow:hidden; margin-top:20px;">
+        <!-- Header -->
+        <tr>
+            <td style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); padding:30px 40px; text-align:center;">
+                <h1 style="color:#ffffff; margin:0; font-size:24px; font-weight:600;">TrustFlow</h1>
+                <p style="color:#f7d4d4; margin:8px 0 0; font-size:14px;">✗ Expense Rejected</p>
+            </td>
+        </tr>
+        <!-- Body -->
+        <tr>
+            <td style="padding:40px;">
+                <p style="color:#333; font-size:16px; line-height:1.6; margin:0 0 20px;">
+                    Hi <strong>{{ recipient_name }}</strong>,
+                </p>
+                <p style="color:#555; font-size:14px; line-height:1.6; margin:0 0 20px;">
+                    Unfortunately, your expense has been <strong style="color:#eb3349;">rejected</strong>.
+                </p>
+                <!-- Expense Details Box -->
+                <table width="100%" cellspacing="0" cellpadding="0" style="background:#fdf0f0; border-radius:8px; border:1px solid #f5c6cb; margin:0 0 24px;">
+                    <tr>
+                        <td style="padding:20px;">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px; width:120px;">Expense ID</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px; font-family:monospace;">{{ expense_id[:8] }}…</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Amount</td>
+                                    <td style="padding:6px 0; color:#333; font-size:16px; font-weight:600;">₹{{ amount }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Category</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ category }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Vendor</td>
+                                    <td style="padding:6px 0; color:#333; font-size:13px;">{{ vendor_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:6px 0; color:#888; font-size:13px;">Status</td>
+                                    <td style="padding:6px 0;">
+                                        <span style="background:#f8d7da; color:#721c24; padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600;">REJECTED</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <p style="color:#555; font-size:14px; line-height:1.6; margin:0 0 8px;">
+                    Please contact your manager for more details or resubmit with corrections.
+                </p>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+            <td style="padding:20px 40px; background:#f8f9fa; border-top:1px solid #e9ecef; text-align:center;">
+                <p style="color:#999; font-size:12px; margin:0;">
+                    This is an automated message from TrustFlow. Please do not reply directly to this email.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
